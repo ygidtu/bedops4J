@@ -5,8 +5,6 @@ Java version of bedops
 
 [github of bedops <https://github.com/bedops/bedops>](https://github.com/bedops/bedops)
 
-![懒](./img/1.jpg)
-
 
 
 ### 2018.3.21
@@ -23,7 +21,7 @@ Moreover, serveral changes based on orignal bedops have been made.
 
 
 
-#### 说明（Instructions）
+## 说明（Instructions）
 
 1. 将bedops和closest-features的主要功能融合为一体，因此参数有所改动，具体如下：
 
@@ -84,6 +82,8 @@ Moreover, serveral changes based on orignal bedops have been made.
    >
    > Rely on Java8's RandomAccessFile to make repeated judgments, to make sure there are missed results. Of course, the computing speed will naturally slow down accordingly.
 
+   ​
+
 5. --closest-features、--closest连用时，会优选最后一个有重合的位点，算法原因，bedops就是如此，我没做改动
 
    When --closest-features and --closest are used in conjunction, the last overlapping site is preferred. The reason for the algorithm is that for beprots, I did not change it.
@@ -94,21 +94,19 @@ Moreover, serveral changes based on orignal bedops have been made.
 
    When --closest-features, the calculation of the distance between two sites is not a simple addition and subtraction, but also based on the relative positions of the two sites, plus additional + - 1 accordingly, this calculation I calculate according to the method of bedops
 
+   ​
+
 7. 添加了--center，能够计算两个位点中心的距离
 
    Added --center to calculate the distance between center of two sites
 
-#### 碎碎念
+## 碎碎念
 
 最开始就是纯粹想重新练习一下Java的用法，然后没什么好练手的目标就从这个上手了
-
-毕竟这个平时折腾的比较多，也比较熟悉，之前也写过Python的两个类（不好用）
 
 正好买了Java核心技术，就看书折腾，2018过年期间开的头，开学回来写了满打满算一个多星期，
 
 前前后后加起来可能搞了一个多月，，终于搞完了
-
-不过，，，代码风格够乱的，本来想整理的，，，有空再说吧，，，写文章去了，，，
 
 本来还想写一个swing的GUI，再说吧
 
