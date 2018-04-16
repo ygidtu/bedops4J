@@ -1,18 +1,13 @@
 package com.company;
-import java.io.FileNotFoundException;
-import java.io.IOException;
 
-import basic.BedFormatError;
-import com.sun.xml.internal.ws.policy.privateutil.PolicyUtils;
-import func.*;
+import java.io.IOException;
+import basic.*;
 import org.apache.commons.cli.*;
 import java.io.File;
-
 import java.security.InvalidParameterException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-
+import func.*;
 
 /**
  * @author Zhang Yiming
@@ -196,6 +191,24 @@ class ParameterConstructer {
         );
         options.addOption(closestDist);
 
+        Option difference = new Option(
+                "d", "difference", false,
+                "ReferenceFile File2 [File]*"
+        );
+        options.addOption(difference);
+
+        Option symmdiff = new Option(
+                "sd", "symmdiff", false,
+                "File1 File2 [File]*"
+        );
+        options.addOption(symmdiff);
+
+        Option partition = new Option(
+                "p", "partition", false,
+                "File1 [File]*"
+        );
+        options.addOption(partition);
+
         // retrieve all the parameters
         this.parser = new DefaultParser();
         this.formatter = new HelpFormatter();
@@ -357,6 +370,20 @@ class PerformFuntion {
         if (inputFiles.size() > 2) { new File(second).delete(); }
     }
 
+    // run difference
+    public void difference() throws IOException, BedFormatError {
+        DifferentBed differ = new DifferentBed();
+
+        differ.difference(inputFiles, outputFile);
+    }
+
+    // run symdiff
+    public void symmdiff() throws IOException, BedFormatError {
+        DifferentBed differ = new DifferentBed();
+
+        differ.symmetricDifference(inputFiles, outputFile);
+    }
+
     // run partition
     public void pattition () throws IOException, BedFormatError {
         Partition parter = new Partition();
@@ -456,6 +483,10 @@ public class Main {
                 runner.closestFeature();
             } else if (cmdParser.hasOption("partition")) {
                 runner.pattition();
+            } else if (cmdParser.hasOption("difference")) {
+                runner.difference();
+            } else if (cmdParser.hasOption("symmdiff")) {
+                runner.symmdiff();
             }
         }  catch (NumberFormatException e) {
             System.err.println(e.getMessage());

@@ -1,15 +1,11 @@
 package func;
+
 import basic.BasicBed;
 import basic.BedFormatError;
-import com.sun.xml.internal.ws.policy.privateutil.PolicyUtils;
-import org.omg.CORBA.BAD_CONTEXT;
-import org.omg.CORBA.MARSHAL;
-
 import java.io.*;
 import java.util.Arrays;
 import java.util.HashMap;
-import java.util.ArrayList;
-import java.util.Map;
+
 
 
 public class ClosestFeatures {
