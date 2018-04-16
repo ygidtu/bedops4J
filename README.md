@@ -6,6 +6,8 @@ Java version of bedops
 [github of bedops <https://github.com/bedops/bedops>](https://github.com/bedops/bedops)
 
 
+### 2018.4.16
+突发发现貌似还有几个bug，最近没时间修，毕业之后再说吧
 
 ### 2018.3.21
 
@@ -28,30 +30,33 @@ Moreover, serveral changes based on orignal bedops have been made.
    Combining the main functions of beedops and close-features into one, so the parameters have been changed, as follows
 
    ```shell
-   usage: Bedops for Java
-    -c,--complement          File1 [File]*
-       --center              Only work with closest-features, print the
-                             distance between center of two elements
-    -cf,--closest-features   File1 File2
-       --closest             Only work with closest-features, only print the
-                             closest element
-       --dist                Only work with closest-features, print the
-                             distance betweeen two elements
-    -e,--element-of          [bp | percentage] ReferenceFile File2 [File]*
-                             by default, -e 100% is used.  'bedops -e 1' is
-                             also popular.
-    -i,--intersect           File1 File2 [File]*
-    -m,--merge               file paths that needs to be merged
-    -n,--non-element-of      [bp | percentage] ReferenceFile File2 [File]*
-                             by default, -n 100% is used.  'bedops -n 1' is
-                             also popular.
-    -o,--output <arg>        output file path
-    -S,--pre-sort            Whether files need to be sorted in advance
-    -s,--sort <arg>          file path that needs to be sorted
-       --stagger <arg>       [nt] only worked for chop
-    -u,--everything          file paths that needs to concatenating
-    -w,--chop <arg>          [bp] [--stagger <nt>] File1 [File]*
-                             by default, -w 1 is used with no staggering*
+  usage: Bedops for Java
+ -c,--complement          File1 [File]*
+    --center              Only work with closest-features, print the
+                          distance between center of two elements
+ -cf,--closest-features   File1 File2
+    --closest             Only work with closest-features, only print the
+                          closest element
+ -d,--difference          ReferenceFile File2 [File]*
+    --dist                Only work with closest-features, print the
+                          distance betweeen two elements
+ -e,--element-of          [bp | percentage] ReferenceFile File2 [File]*
+                          by default, -e 100% is used.  'bedops -e 1' is
+                          also popular.
+ -i,--intersect           File1 File2 [File]*
+ -m,--merge               file paths that needs to be merged
+ -n,--non-element-of      [bp | percentage] ReferenceFile File2 [File]*
+                          by default, -n 100% is used.  'bedops -n 1' is
+                          also popular.
+ -o,--output <arg>        output file path
+ -p,--partition           File1 [File]*
+ -S,--pre-sort            Whether files need to be sorted in advance
+ -s,--sort <arg>          file path that needs to be sorted
+ -sd,--symmdiff           File1 File2 [File]*
+    --stagger <arg>       [nt] only worked for chop
+ -u,--everything          file paths that needs to concatenating
+ -w,--chop <arg>          [bp] [--stagger <nt>] File1 [File]*
+                          by default, -w 1 is used with no staggering*
    ```
 
    ​
