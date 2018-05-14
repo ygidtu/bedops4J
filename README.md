@@ -29,7 +29,7 @@ Moreover, serveral changes based on orignal bedops have been made.
 
    Combining the main functions of beedops and close-features into one, so the parameters have been changed, as follows
 
-   ```shell
+   ```bash
   usage: Bedops for Java
  -c,--complement          File1 [File]*
     --center              Only work with closest-features, print the
